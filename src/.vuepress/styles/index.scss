@@ -1,0 +1,20 @@
+// place your custom styles here
+.vp-portfolio .vp-portfolio-name,
+.vp-portfolio .vp-portfolio-title {
+  color: white;
+}
+.vp-portfolio .vp-portfolio-welcome {
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.vp-portfolio-info {
+    background: transparent;
+}
+ 
+@media (max-width: 959px){
+  .vp-portfolio-mask {
+    background-position: 30% center !important;
+  }
+}
+
