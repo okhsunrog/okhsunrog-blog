@@ -17,7 +17,7 @@ star: true
 
 
 
-Installing Arch Linux on ZFS has always been a non-trivial task: you need to know many nuances, read tons of articles and various wikis, understand dataset and pool creation flags, initramfs configuration, which systemd services to enable, kernel command line parameters, and proper configs. If installing manually, the installation takes a whole evening, thoughtfully smoking through manuals in front of a black console. (Small life hack: if you have a second computer, it's much more pleasant to install Arch from it by connecting to the target via SSH, precisely because of the ability to copy-paste commands).
+Installing Arch Linux on ZFS has always been a non-trivial task: you need to know many nuances, read tons of articles and various wikis, understand dataset and pool creation flags, initramfs configuration, which systemd services to enable, kernel command line parameters, and proper configs. If installing manually, the installation takes a whole evening, carefully poring over manuals in front of a black console. (Small life hack: if you have a second computer, it's much more pleasant to install Arch from it by connecting to the target via SSH, precisely because of the ability to copy-paste commands).
 
 A few years ago, I started working on automating this process: I wrote several bash scripts that do everything for me. It wasn't very stable: they periodically broke, there was no flexibility in configuration: the script was rigidly tied to my configuration, and when friends asked for help installing Arch Linux on ZFS, I usually just made a new repository branch, adapting the script to the needed configuration. Everything changed last winter when I wanted to install a clean system for experiments on a new SSD once again. I seriously thought about a new installer that would provide a flexible menu with TUI configuration. I had the idea to write a tool from scratch in Rust using ratatui, but the scale of work for writing a flexible and reliable project comparable in functionality to archinstall began to scare me a bit. The next thought was to try forking archinstall. While reading its source code and documentation, I realized: I don't need to fork it, I can use it as a library.
 
@@ -41,7 +41,7 @@ Additionally, if you have a home server with ZFS, you can send incremental snaps
 
 I thought long about which installation scenarios need to be supported. In the end, I got three main modes:
 
-**1. Full Disk** - for those who want to dedicate the entire disk to ZFS. Here I implemented full partitioning automation through sgdisk. The installer first clears GPT and MBR signatures (hello, problems with old partition remnants!), then creates a fresh GPT table and cuts partitions: EFI partition at 500MB, optionally swap partition at the end of the disk, and everything else - for ZFS.
+**1. Full Disk** - for those who want to dedicate the entire disk to ZFS. Here I implemented full partitioning automation through sgdisk. The installer first clears GPT and MBR signatures (hello, problems with old partition remnants!), then creates a fresh GPT table and creates partitions: EFI partition at 500MB, optionally swap partition at the end of the disk, and everything else - for ZFS.
 
 **2. New Pool** - for dual-boot scenarios. You already have Windows on the first half of the disk? No problem! Specify a free partition, the installer will create a ZFS pool on it and install the system there. You can use an existing EFI partition or create a new one.
 
@@ -172,7 +172,7 @@ Everything is written in Python 3.13+ using archinstall as a library, but the ar
 
 ZFS installation goes through its own class (inheriting from archinstall.Installer): it adds the necessary packages, correctly builds initramfs (dracut or mkinitcpio) and takes into account all ZFS nuances. Kernel and ZFS compatibility validation is moved to a separate module — it parses repositories, ZFS releases and checks that everything is compatible. Pydantic is used for configs so there's no magic with dicts.
 
-The ISO profile is assembled through Jinja2 templates — it's easier to maintain different variants (DKMS or precompiled modules, different hooks and services, different package sets are included conditionally). Everything is maximally typed so as not to catch bugs on flat ground.
+The ISO profile is assembled through Jinja2 templates — it's easier to maintain different variants (DKMS or precompiled modules, different hooks and services, different package sets are included conditionally). Everything is heavily typed to avoid trivial bugs.
 
 #### ISO Building: just, Justfile and Jinja2
 
@@ -236,9 +236,9 @@ The `iso_builder.py` script forms the ISO profile based on these templates and p
 GitHub Actions is responsible for building: once a month it automatically builds fresh images, and it also runs when pushing a new tag and forms a release with ISO images as artifacts. Before building, the pipeline checks compatibility: first tries prebuilt ZFS modules, and if versions don't match, automatically switches to DKMS. Thanks to this, the image with `linux-lts` is obtained almost always, and `linux` in rare cases, if the current kernel version is not yet supported by the OpenZFS project, is simply skipped.
 
 ZFS is a powerful tool, but the complexity of its configuration scares many away. I hope that archinstall_zfs will make this filesystem more accessible to regular Arch Linux users. You no longer need to be a guru to get all the benefits of ZFS - snapshots, boot environments, compression and reliability.
-The project is actively developing, so bugs are possible. But I use it myself for all my installations and the flight is normal so far :)
+The project is under active development, so bugs are possible. But I use it myself for all my installations and it's been working great so far :)
 
-If you have ideas for improvement or found a bug - welcome to issues on GitHub! And if the project was useful - put a star, it motivates to develop it further.
+If you have ideas for improvement or found a bug - feel free to open issues on GitHub! And if the project was useful - give it a star - it motivates me to keep developing it.
 
 **Repository link**: https://github.com/okhsunrog/archinstall_zfs
 
