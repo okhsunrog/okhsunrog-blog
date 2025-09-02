@@ -1,7 +1,7 @@
 ---
 title: "Arch Linux на ZFS для людей: новый TUI-установщик archinstall_zfs"
 author: Danila Gornushko
-date: 2024-12-31
+date: 2025-09-02
 category:
   - Linux
   - ZFS

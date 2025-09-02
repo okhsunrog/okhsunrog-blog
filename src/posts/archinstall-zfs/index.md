@@ -1,7 +1,7 @@
 ---
 title: "Meet archinstall_zfs: The TUI That Tames Arch Linux ZFS Installation"
 author: Danila Gornushko
-date: 2024-12-31
+date: 2025-09-02
 category:
   - Linux
   - ZFS
