@@ -76,8 +76,15 @@ Rust developer with 6+ years of experience in software engineering and 2.5 years
 
 #### Work Experience
 
+##### Rust Developer | USETECH (outsourcing for VK Tech), Moscow
+*August 2025 — Present (1 month)*
+
+*   Working on VK Tech's Tarantool Column Store project as a Rust developer.
+*   Developing high-performance database components and storage systems.
+*   Contributing to the columnar storage engine implementation in Rust.
+
 ##### Rust/C Programmer | Minimax-94, Moscow
-*March 2024 — Present (1 year 5 months)*
+*March 2024 — July 2025 (1 year 4 months)*
 
 *   Developed and debugged firmware for STM32 microcontrollers in C and Rust.
 *   Created test utilities and scripts for data analysis in Python.
