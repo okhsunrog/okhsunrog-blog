@@ -11,6 +11,8 @@ Rust Developer
 *   Email: me@okhsunrog.dev
 *   Personal website: okhsunrog.dev
 *   GitHub: github.com/okhsunrog
+*   LinkedIn: https://www.linkedin.com/in/danila-gornushko-130152379/
+*   Habr: https://habr.com/ru/users/okhsunrog/
 *   Location: Moscow
 *   Citizenship: Russia
 

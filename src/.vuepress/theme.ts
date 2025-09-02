@@ -26,11 +26,11 @@ export default hopeTheme({
       Twitter: "https://x.com/okhsunrog",
       Youtube: "https://www.youtube.com/channel/UCdn80hzJKF8NxoAt0VU6wxw",
       VK: "https://vk.com/okhsunrog",
-      // TODO
-      // Habr: {
-      //   icon: "/images/habr.png",
-      //   link: "https://habr.com/ru/users/okhsunrog",
-      // },
+      Habr: {
+        icon: "/images/habr.svg",
+        link: "https://habr.com/ru/users/okhsunrog",
+      },
+      LinkedIn: "https://www.linkedin.com/in/danila-gornushko-130152379/",
       Codeberg: {
         icon: "https://design.codeberg.org/logo-kit/icon.svg",
         link: "https://codeberg.org/okhsunrog",
