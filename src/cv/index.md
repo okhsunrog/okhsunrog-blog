@@ -20,7 +20,7 @@ Rust Developer
 
 #### Summary
 
-Rust developer with 6+ years of experience in software engineering and 2.5 years of active Rust development. Specializing in building high-performance and reliable solutions across a wide range: from systems programming and embedded systems to backend services and CLI utilities. Deep understanding of the language (unsafe, async, macros), extensive Linux administration experience, and expertise in high-performance systems. Active open-source community member and contributor to key Embedded Rust ecosystem projects.
+Rust developer with <Duration start="2019-06" format="years-plus" /> years of experience in software engineering and <Duration start="2023-03" format="years-decimal" /> years of active Rust development. Specializing in building high-performance and reliable solutions across a wide range: from systems programming and embedded systems to backend services and CLI utilities. Deep understanding of the language (unsafe, async, macros), extensive Linux administration experience, and expertise in high-performance systems. Active open-source community member and contributor to key Embedded Rust ecosystem projects.
 
 ---
 
@@ -79,21 +79,21 @@ Rust developer with 6+ years of experience in software engineering and 2.5 years
 #### Work Experience
 
 ##### Rust Developer | USETECH (outsourcing for VK Tech), Moscow
-*August 2025 — Present (1 month)*
+<Duration start="2025-08" locale="en" />
 
 *   Working on VK Tech's Tarantool Column Store project as a Rust developer.
 *   Developing high-performance database components and storage systems.
 *   Contributing to the columnar storage engine implementation in Rust.
 
 ##### Rust/C Programmer | Minimax-94, Moscow
-*March 2024 — July 2025 (1 year 4 months)*
+<Duration start="2024-03" end="2025-07" locale="en" />
 
 *   Developed and debugged firmware for STM32 microcontrollers in C and Rust.
 *   Created test utilities and scripts for data analysis in Python.
 *   Designed console and GUI applications (GTK4, Tauri) in Rust for interacting with hardware.
 
 ##### Rust/Embedded Developer | Korotkov (Sole Proprietorship), Moscow
-*March 2023 — February 2024 (1 year)*
+<Duration start="2023-03" end="2024-02" locale="en" />
 
 *   Developed a full cycle of electronic modules for escape rooms: circuit design, programming (AVR, ESP32 in C/C++/Rust), assembly, and debugging.
 *   Implemented a distributed system of devices with network communication over CAN bus and a custom protocol.
@@ -101,14 +101,14 @@ Rust developer with 6+ years of experience in software engineering and 2.5 years
 *   Introduced an OTA firmware update system over CAN bus using Raspberry Pi.
 
 ##### Junior DevOps | Rostelecom Information Technologies, Moscow
-*November 2021 — February 2023 (1 year 4 months)*
+<Duration start="2021-11" end="2023-02" locale="en" />
 
 *   Developed a web service for server monitoring (Ruby, Sinatra, Bootstrap).
 *   Participated in service migrations and implemented containerization (Docker, docker-compose).
 *   Set up CI/CD pipelines and deployment automation.
 
 ##### Programmer, System Administrator | Freelance, Moscow
-*June 2019 — September 2021 (2 years 4 months)*
+<Duration start="2019-06" end="2021-09" locale="en" />
 
 *   Administation of Linux servers, deployed web services, developed projects on Arduino and Python, and native Android applications (Kotlin) for controlling devices via BLE.
 
