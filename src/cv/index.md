@@ -78,12 +78,19 @@ Rust developer with <Duration start="2019-06" format="years-plus" /> years of ex
 
 #### Work Experience
 
-##### Rust Developer | USETECH (outsourcing for VK Tech), Moscow
-<Duration start="2025-08" locale="en" />
+##### Senior Backend Developer | VK Tech, Moscow
+<Duration start="2026-05" locale="en" />
 
-*   Working on VK Tech's Tarantool Column Store project as a Rust developer.
+*   Continuing work on the Tarantool Column Store project as an in-house Rust developer (same team and project, transitioned from outsourcing to staff).
 *   Developing high-performance database components and storage systems.
 *   Contributing to the columnar storage engine implementation in Rust.
+
+##### Rust Developer | USETECH (outsourcing for VK Tech), Moscow
+<Duration start="2025-08" end="2026-04" locale="en" />
+
+*   Worked on VK Tech's Tarantool Column Store project as a Rust developer.
+*   Developed high-performance database components and storage systems.
+*   Contributed to the columnar storage engine implementation in Rust.
 
 ##### Rust/C Programmer | Minimax-94, Moscow
 <Duration start="2024-03" end="2025-07" locale="en" />
@@ -108,7 +115,7 @@ Rust developer with <Duration start="2019-06" format="years-plus" /> years of ex
 *   Set up CI/CD pipelines and deployment automation.
 
 ##### Programmer, System Administrator | Freelance, Moscow
-<Duration start="2019-06" end="2021-09" locale="en" />
+<Duration start="2020-06" end="2021-09" locale="en" />
 
 *   Administation of Linux servers, deployed web services, developed projects on Arduino and Python, and native Android applications (Kotlin) for controlling devices via BLE.
 
