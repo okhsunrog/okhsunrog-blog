@@ -1,7 +1,14 @@
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, resolve } from "node:path";
+
 import { hopeTheme } from "vuepress-theme-hope";
 
 import { enNavbar, ruNavbar } from "./navbar/index.js";
 import { enSidebar, ruSidebar } from "./sidebar/index.js";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const habrIcon = readFileSync(resolve(__dirname, "public/images/habr.svg"), "utf-8");
 
 export default hopeTheme({
   hostname: "https://okhsunrog.dev",
@@ -27,7 +34,7 @@ export default hopeTheme({
       Youtube: "https://www.youtube.com/channel/UCdn80hzJKF8NxoAt0VU6wxw",
       VK: "https://vk.com/okhsunrog",
       Habr: {
-        icon: "/images/habr.svg",
+        icon: habrIcon,
         link: "https://habr.com/ru/users/okhsunrog",
       },
       LinkedIn: "https://www.linkedin.com/in/danila-gornushko-130152379/",
