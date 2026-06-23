@@ -20,7 +20,7 @@ Rust Developer
 
 #### Summary
 
-Rust developer with <Duration start="2019-06" format="years-plus" /> years of experience in software engineering and <Duration start="2023-03" format="years-decimal" /> years of active Rust development. Specializing in building high-performance and reliable solutions across a wide range: from systems programming and embedded systems to backend services and CLI utilities. Deep understanding of the language (unsafe, async, macros), extensive Linux administration experience, and expertise in high-performance systems. Active open-source community member and contributor to key Embedded Rust ecosystem projects.
+Rust developer with <Duration start="2020-06" format="years-plus" /> years of experience in software engineering and <Duration start="2023-03" format="years-decimal" /> years of active Rust development. Specializing in building high-performance and reliable solutions across a wide range: from systems programming and embedded systems to backend services and CLI utilities. Deep understanding of the language (unsafe, async, macros), extensive Linux administration experience, and expertise in high-performance systems. Active open-source community member and contributor to key Embedded Rust ecosystem projects.
 
 ---
 
