@@ -19,61 +19,9 @@ Rust Developer
 
 ---
 
-#### Summary
+#### О себе
 
-Rust-разработчик с <Duration start="2020-06" format="years-plus" /> годами опыта в программной инженерии и <Duration start="2023-03" format="years-decimal" /> годами активной разработки на Rust. Специализируюсь на создании высокопроизводительных и надежных решений широкого спектра: от системного программирования и встраиваемых систем до backend-сервисов, GUI и CLI-утилит. Обладаю глубоким пониманием языка (unsafe, async, макросы), обширным опытом администрирования Linux и экспертизой в системах с высокими требованиями к производительности. Активный участник open-source сообщества, контрибьютор в ключевые проекты экосистемы Embedded Rust.
-
----
-
-#### Ключевые компетенции
-
-#### Rust (Экспертный уровень)
-*   **Основы языка:** Глубокое понимание `async`/`await` (Pin, Wakers), `unsafe`, `FFI`, `no_std`, владение lifetime'ами, Send/Sync, атомиками и atomic ordering.
-*   **Метапрограммирование:** Декларативные и процедурные макросы, глубокое понимание Rust type system.
-*   **Экосистема:** `tokio`, `axum`, `serde`, `tracing`, `thiserror`, `bytes`, `clap`, `criterion`, `bindgen/cc`.
-*   **Специализации:** Backend-сервисы, CLI-утилиты, системное программирование, встраиваемые системы, GUI (GTK4, Tauri).
-*   **Производительность:** Профилирование (perf, flamegraph), бенчмаркинг, оптимизация кода для снижения потребления CPU/RAM.
-
-#### Backend & Infrastructure
-*   **Web-сервисы:** Axum, SQLx, gRPC, Protobuf, REST API, WebSockets
-*   **Базы данных:** PostgreSQL, SQLite, Redis, InfluxDB
-*   **Linux администрирование:** SystemD, сетевые настройки, файловые системы, SSH, мониторинг систем, ZFS, пакетирование приложений, iptables, опыт поддержки production-серверов
-*   **DevOps:** Docker/docker-compose, CI/CD (GitHub Actions, GitLab CI, Forgejo), Ansible, настройка раннеров
-*   **Мониторинг:** Grafana, InfluxDB, Prometheus, трейсинг приложений
-
-#### Системное программирование
-*   **C (Экспертный уровень):** Низкоуровневая разработка, написание драйверов, линкер скрипты, memory barriers
-*   **Отладка и профилирование:** GDB, strace, valgrind, perf, статический анализ (PVS-Studio)
-*   **Сборка:** CMake, Make, кросс-компиляция, системы сборки
-
-#### Embedded systems
-*   **Микроконтроллеры:** STM32, ESP32, nRF52, RP2040, AVR
-*   **Экосистема:** Embassy, esp-hal, probe-rs, defmt, RTT, no_std/no_alloc разработка
-*   **RTOS и фреймворки:** FreeRTOS, ESP-IDF, ChibiOS, Embedded Linux
-*   **Протоколы:** CAN, USB, BLE, Ethernet, I2C, SPI, UART, RS-485, USB PD
-*   **Инструменты:** JTAG/SWD (OpenOCD, probe-rs), логический анализатор, осциллограф, libsigrok
-
-#### Безопасность и криптография
-*   **Прикладная криптография:** Хэширование (SHA-256, SHA-3), симметричное (AES) и асимметричное шифрование (RSA, ECC), эллиптические кривые (secp256k1, Ed25519), цифровые подписи (ECDSA)
-*   **Информационная безопасность:** Понимание векторов атак, атак по сторонним каналам, constant-time алгоритмы
-*   **Реверс-инжиниринг:** Анализ ПО (Ghidra), сетевых протоколов (Wireshark), USB-протоколов (usbmon)
-
-#### Дополнительные навыки
-*   **Python:** Скриптинг, автоматизация, анализ данных, веб-скрейпинг (pytest, numpy, scipy, sympy, pandas, polars, playwright, uv/poetry)
-*   **Frontend:** Vue 3, Pinia, Vite, Tailwind CSS, JavaScript/TypeScript
-*   **Mobile/Desktop:** Tauri (Rust backend + Vue frontend), нативные GUI (GTK4, native-windows-gui)
-*   **Web3:** Базовое понимание Bitcoin, Ethereum, Solana; небольшой опыт с Solana SDK
-*   **Прочие языки: (на базовом уровне)** C++, Ruby (Sinatra), Kotlin, Bash/Shell scripting
-*   **Аппаратная разработка:** KiCAD, EasyEDA, разработка схем, трассировка PCB, монтаж SMD/QFN
-
----
-
-#### Подход к работе и личные качества
-
-*   **Проактивность и ответственность:** Беру задачу и довожу её до результата, инициирую обсуждения и ищу решения, когда это нужно.
-*   **Командная работа:** Открыто делюсь идеями, участвую в code review и помогаю коллегам, принимаю конструктивный feedback.
-*   **Качество кода:** Пишу читаемый и поддерживаемый код, покрываю ключевую логику тестами, поддерживаю актуальную документацию.
-*   **Непрерывное развитие:** Следую за развитием Rust, изучаю новые инструменты и практики и делюсь ими с командой и сообществом.
+Rust-разработчик с <Duration start="2020-06" format="years-plus" /> годами опыта в программной инженерии и <Duration start="2023-03" format="years-decimal" /> годами разработки на Rust. Специализируюсь на системном ПО, компонентах СУБД и embedded. Работаю над Tarantool Column Store в VK Tech, разрабатываю сервисы и инструменты для Linux и Android. Мои изменения приняты в Apache Arrow, Embassy, esp-hal, ergot и Slint.
 
 ---
 
@@ -82,7 +30,7 @@ Rust-разработчик с <Duration start="2020-06" format="years-plus" /> 
 ##### Rust-разработчик / Senior Backend Developer | Tarantool Column Store, VK Tech, Москва
 <Duration start="2025-08" locale="ru" />
 
-До апреля 2026 работал через USETECH, с мая 2026 — в штате VK Tech. Команда и проект остались прежними.
+До апреля 2026 работал через USETECH, с мая 2026 работаю в штате VK Tech. Команда и проект остались прежними.
 
 *   Разработка высокопроизводительных компонентов базы данных и систем хранения на Rust.
 *   Участие в реализации колоночного движка хранения на Rust.
@@ -115,17 +63,51 @@ Rust-разработчик с <Duration start="2020-06" format="years-plus" /> 
 
 ---
 
-#### Open Source и проекты
+#### Избранные проекты
 
-*   **Активный контрибьютор** в ключевые проекты экосистемы Embedded Rust: `embassy-rs`, `esp-hal`, `probe-rs`.
-*   **Автор и мейнтейнер** нескольких библиотек (крейтов) на `crates.io`.
-*   **Мейнтейнер пакетов** в Arch Linux User Repository (AUR).
-*   **Портфолио проектов** доступно на GitHub: `github.com/okhsunrog`.
-*   Регулярно пишу статьи и документацию, активно участвую в жизни open-source сообщества.
+##### [Floppa VPN](https://github.com/okhsunrog/floppa-vpn)
+
+*   Разработал VPN-сервис: backend на Axum/PostgreSQL, daemon управления VPN, Telegram-бот, административный интерфейс и клиент Tauri 2 для Linux, Windows и Android.
+*   Реализовал общее Rust-ядро управления соединением: выбор протокола, восстановление после сбоев, отмену попыток и откат сетевых изменений. Интегрировал WireGuard, AmneziaWG и VLESS+REALITY, сбор метрик в VictoriaMetrics и синхронизацию через PostgreSQL LISTEN/NOTIFY.
+
+##### [vpnhide](https://github.com/okhsunrog/vpnhide)
+
+*   Разработал инструменты для скрытия активного VPN от выбранных Android-приложений: фильтрацию framework API в system_server через LSPosed, модули ядра Linux и Zygisk.
+*   Связал приложение на Kotlin/Jetpack Compose с Rust-компонентами через JNI, реализовал диагностику и экспорт отчётов. Добавил тесты нативной логики и QEMU-сценарии для модулей ядра.
+
+##### [km003c-rs](https://github.com/okhsunrog/km003c-rs)
+
+*   Разработал инструменты для USB-C анализатора POWER-Z KM003C: типизированную async-библиотеку на Rust, CLI, GUI на egui и экспериментальный интерфейс на Slint для desktop и Android.
+*   Реализовал обмен с устройством через nusb, сбор измерений и разбор USB Power Delivery. Опубликовал библиотеку на crates.io и Python bindings через PyO3; настроил сборку wheels в CI.
+
+---
+
+#### Вклад в open source
+
+*   **Apache Arrow:** исправил panic при переполнении словарных ключей в concat/interleave, включая вложенные массивы. [Принятый PR](https://github.com/apache/arrow-rs/pull/10675).
+*   **Embassy и esp-hal:** добавил CAN FD драйвер для ESP32-C5 с blocking/async API и аппаратными тестами; переработал CORDIC API и исправил зависания DMA на STM32. В бенчмарке STM32G474 сократил время вызова CORDIC с 35 до 22 тактов. [CAN FD](https://github.com/esp-rs/esp-hal/pull/6280), [CORDIC](https://github.com/embassy-rs/embassy/pull/5663).
+*   **ergot:** развивал маршрутизацию, адресацию, транспортные абстракции и отслеживание доступности узлов. Исправил ошибки безопасности памяти с регрессионными тестами и проверками под Miri. [Принятый PR](https://github.com/jamesmunns/ergot/pull/217).
+*   **Slint:** исправил обработку шага строки framebuffer в Linux KMS и ошибки software renderer; добавил поддержку RGB565 big-endian для SPI-дисплеев. [Linux KMS](https://github.com/slint-ui/slint/pull/13516), [RGB565](https://github.com/slint-ui/slint/pull/10882).
+*   Публикую библиотеки на crates.io, поддерживаю пакеты в AUR и пишу технические статьи. Другие проекты доступны на [GitHub](https://github.com/okhsunrog).
+
+---
+
+#### Технические навыки
+
+*   **Rust:** async/await, unsafe, FFI, no_std/no_alloc, lifetimes, Send/Sync, атомики, декларативные и процедурные макросы; Tokio, Serde, tracing, Criterion.
+*   **Backend и данные:** Axum, SQLx, PostgreSQL, SQLite, Redis, Apache Arrow, DataFusion; REST, gRPC/Protobuf, WebSockets, SSE, OpenAPI, PostgreSQL LISTEN/NOTIFY.
+*   **Linux и сети:** systemd, ZFS, SSH, TUN, policy routing, nftables/iptables, WireGuard/AmneziaWG; администрирование серверов и пакетирование приложений.
+*   **Мониторинг:** VictoriaMetrics, Grafana, Prometheus, InfluxDB, Prometheus-совместимые метрики, tracing.
+*   **Embedded:** STM32, ESP32, nRF52, RP2040, AVR; Embassy, esp-hal, FreeRTOS, ESP-IDF; CAN/CAN FD, USB/USB PD, BLE, Ethernet, I2C, SPI, UART, RS-485.
+*   **Desktop и Android:** Tauri 2, Slint, egui, GTK4; Kotlin, Jetpack Compose, JNI; nusb, PyO3.
+*   **Отладка и проверка:** GDB, strace, Valgrind, perf/flamegraph, Miri, аппаратные HIL-тесты, интеграционные тесты, pytest, Playwright; probe-rs, defmt, RTT, JTAG/SWD, Wireshark, usbmon, Ghidra.
+*   **Сборка и инфраструктура:** GitHub Actions, GitLab CI, Forgejo, Docker Compose, Ansible, кросс-компиляция, CMake, Make.
+*   **Другие языки и frontend:** C, Python, Bash, TypeScript/JavaScript, Vue 3, React, Pinia, Vite, Tailwind CSS; базовые C++ и Ruby.
+*   **Аппаратная разработка:** схемотехника, трассировка PCB, монтаж SMD/QFN, логический анализатор и осциллограф.
 
 ---
 
 #### Образование и языки
 
 *   **Образование:** Среднее полное
-*   **Языки:** Русский (родной), Английский (C1, продвинутый) — свободно читаю и пишу техническую документацию, участвую в обсуждениях и code review на английском 
+*   **Языки:** Русский (родной), Английский (C1, продвинутый). Свободно читаю и пишу техническую документацию, участвую в обсуждениях и code review на английском.
