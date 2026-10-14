@@ -79,19 +79,13 @@ Rust developer with <Duration start="2020-06" format="years-plus" /> years of ex
 
 #### Work Experience
 
-##### Senior Backend Developer | VK Tech, Moscow
-<Duration start="2026-05" locale="en" />
+##### Rust Developer / Senior Backend Developer | Tarantool Column Store, VK Tech, Moscow
+<Duration start="2025-08" locale="en" />
 
-*   Continuing work on the Tarantool Column Store project as an in-house Rust developer (same team and project, transitioned from outsourcing to staff).
-*   Developing high-performance database components and storage systems.
+Worked through USETECH until April 2026, then joined VK Tech as an in-house developer in May 2026. Continued with the same team and project.
+
+*   Developing high-performance database components and storage systems in Rust.
 *   Contributing to the columnar storage engine implementation in Rust.
-
-##### Rust Developer | USETECH (outsourcing for VK Tech), Moscow
-<Duration start="2025-08" end="2026-04" locale="en" />
-
-*   Worked on VK Tech's Tarantool Column Store project as a Rust developer.
-*   Developed high-performance database components and storage systems.
-*   Contributed to the columnar storage engine implementation in Rust.
 
 ##### Rust/C Programmer | Minimax-94, Moscow
 <Duration start="2024-03" end="2025-07" locale="en" />
