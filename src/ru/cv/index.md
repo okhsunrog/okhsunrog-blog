@@ -1,6 +1,7 @@
 ---
 title: Резюме
 icon: file-lines
+article: false
 ---
 
 ### Данила Горнушко

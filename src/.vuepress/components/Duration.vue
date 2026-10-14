@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
+declare const __BUILD_MONTH__: string;
+
 const props = withDefaults(
   defineProps<{
     start: string;
@@ -79,10 +81,7 @@ function formatDuration(totalMonths: number, locale: string): string {
 
 const result = computed(() => {
   const [sy, sm] = parseYM(props.start);
-  const now = new Date();
-  const [ey, em] = props.end
-    ? parseYM(props.end)
-    : [now.getFullYear(), now.getMonth() + 1];
+  const [ey, em] = parseYM(props.end ?? __BUILD_MONTH__);
   const totalMonths = (ey - sy) * 12 + (em - sm);
 
   if (props.format === "years-plus") {

@@ -1,6 +1,7 @@
 ---
 title: CV
 icon: file-lines
+article: false
 ---
 
 ### Danila Gornushko

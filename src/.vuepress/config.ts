@@ -2,8 +2,20 @@ import { defineUserConfig } from "vuepress";
 
 import theme from "./theme.js";
 
+// Capture once so SSR and browser bundles use the same month, even after deployment.
+const buildMonth = new Date().toISOString().slice(0, 7);
+
 export default defineUserConfig({
   base: "/",
+
+  plugins: [
+    {
+      name: "build-month",
+      define: {
+        __BUILD_MONTH__: buildMonth,
+      },
+    },
+  ],
 
   locales: {
     "/": {
