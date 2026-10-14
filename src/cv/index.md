@@ -35,7 +35,7 @@ Rust developer with <Duration start="2020-06" format="years-plus" /> years of ex
 *   **Performance:** Profiling (perf, flamegraph), benchmarking, code optimization for reduced CPU/RAM usage.
 
 #### Backend & Infrastructure
-*   **Web services:** Axum, Diesel ORM, gRPC, Protobuf, REST API, WebSockets
+*   **Web services:** Axum, SQLx, gRPC, Protobuf, REST API, WebSockets
 *   **Databases:** PostgreSQL, SQLite, Redis, InfluxDB
 *   **Linux administration:** SystemD, network configuration, filesystems, SSH, system monitoring, ZFS, application packaging, iptables, production server support
 *   **DevOps:** Docker/docker-compose, CI/CD (GitHub Actions, GitLab CI, Forgejo), Ansible, runner setup

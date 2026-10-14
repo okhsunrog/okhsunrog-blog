@@ -35,7 +35,7 @@ Rust-разработчик с <Duration start="2020-06" format="years-plus" /> 
 *   **Производительность:** Профилирование (perf, flamegraph), бенчмаркинг, оптимизация кода для снижения потребления CPU/RAM.
 
 #### Backend & Infrastructure
-*   **Web-сервисы:** Axum, Diesel ORM, gRPC, Protobuf, REST API, WebSockets
+*   **Web-сервисы:** Axum, SQLx, gRPC, Protobuf, REST API, WebSockets
 *   **Базы данных:** PostgreSQL, SQLite, Redis, InfluxDB
 *   **Linux администрирование:** SystemD, сетевые настройки, файловые системы, SSH, мониторинг систем, ZFS, пакетирование приложений, iptables, опыт поддержки production-серверов
 *   **DevOps:** Docker/docker-compose, CI/CD (GitHub Actions, GitLab CI, Forgejo), Ansible, настройка раннеров
