@@ -76,10 +76,11 @@ Worked through USETECH until April 2026, then joined VK Tech as an in-house deve
 *   Built tools to hide an active VPN from selected Android apps: framework API filtering in system_server through LSPosed, Linux kernel modules, and a Zygisk module.
 *   Connected a Kotlin/Jetpack Compose app to Rust components through JNI, implemented diagnostics and report export, and added native logic tests and QEMU scenarios for kernel modules.
 
-##### [km003c-rs](https://github.com/okhsunrog/km003c-rs)
+##### POWER-Z KM003C: protocol reverse engineering and [km003c-rs](https://github.com/okhsunrog/km003c-rs)
 
-*   Built tools for the POWER-Z KM003C USB-C analyzer: a typed async Rust library, CLI, egui GUI, and an experimental Slint interface for desktop and Android.
-*   Implemented device communication through nusb, measurement acquisition, and USB Power Delivery parsing. Published the library on crates.io and Python bindings through PyO3, with CI-built wheels.
+*   Reverse-engineered the analyzer's undocumented USB protocol by correlating USB captures with official software exports, analyzing Mtools.exe in Ghidra, and examining decrypted device firmware. Reconstructed command and data formats, AES authentication, and encrypted log retrieval; validated implemented workflows on hardware. [Research materials](https://github.com/okhsunrog/km003c-protocol-research).
+*   Built USB transaction analysis tools in Python/Polars and a Rust pcapng-to-Parquet converter. Documented the protocol, distinguishing capture-backed and hardware-validated findings from static analysis conclusions.
+*   Turned the research into a typed async Rust library with nusb communication, measurement acquisition, and USB Power Delivery parsing, plus a CLI, egui GUI, and experimental Slint interface for desktop and Android. Published the library on crates.io and Python bindings through PyO3, with CI-built wheels.
 
 ---
 
