@@ -85,10 +85,12 @@ Rust-разработчик с <Duration start="2020-06" format="years-plus" /> 
 
 #### Вклад в open source
 
-*   **Apache Arrow:** исправил panic при переполнении словарных ключей в concat/interleave, включая вложенные массивы. [Принятый PR](https://github.com/apache/arrow-rs/pull/10675).
-*   **Embassy и esp-hal:** добавил CAN FD драйвер для ESP32-C5 с blocking/async API и аппаратными тестами; переработал CORDIC API и исправил зависания DMA на STM32. В бенчмарке STM32G474 сократил время вызова CORDIC с 35 до 22 тактов. [CAN FD](https://github.com/esp-rs/esp-hal/pull/6280), [CORDIC](https://github.com/embassy-rs/embassy/pull/5663).
-*   **ergot:** развивал маршрутизацию, адресацию, транспортные абстракции и отслеживание доступности узлов. Исправил ошибки безопасности памяти с регрессионными тестами и проверками под Miri. [Принятый PR](https://github.com/jamesmunns/ergot/pull/217).
-*   **Slint:** исправил обработку шага строки framebuffer в Linux KMS и ошибки software renderer; добавил поддержку RGB565 big-endian для SPI-дисплеев. [Linux KMS](https://github.com/slint-ui/slint/pull/13516), [RGB565](https://github.com/slint-ui/slint/pull/10882).
+*   **ergot, мейнтейнер:** развиваю сетевой стек для embedded: архитектуру транспортов, маршрутизацию, адресацию и восстановление соединений. Исправляю ошибки безопасности памяти и конкурентного доступа, добавляю регрессионные тесты и проверки под Miri. [Мои PR](https://github.com/jamesmunns/ergot/pulls?q=is%3Apr+author%3Aokhsunrog).
+*   **Embassy, контрибьютор:** развиваю поддержку периферии STM32: async flash для G0/G4, компараторы, настройку таймеров и CORDIC. Исправил зависания DMA и сократил время вызова CORDIC с 35 до 22 тактов в бенчмарке STM32G474. [Мои PR](https://github.com/embassy-rs/embassy/pulls?q=is%3Apr+author%3Aokhsunrog).
+*   **esp-hal и esp-pacs, контрибьютор:** добавил CAN FD драйвер для ESP32-C5 с blocking/async API и аппаратными тестами, исправлял потерю данных USB Serial и ошибки тактирования, добавлял описания регистров периферии. [esp-hal](https://github.com/esp-rs/esp-hal/pulls?q=is%3Apr+author%3Aokhsunrog), [esp-pacs](https://github.com/esp-rs/esp-pacs/pulls?q=is%3Apr+author%3Aokhsunrog).
+*   **Slint, контрибьютор:** развиваю Linux KMS backend, исправляю software renderer и обработку ввода. Добавил поддержку RGB565 big-endian для SPI-дисплеев и выравнивания областей перерисовки. [Мои PR](https://github.com/slint-ui/slint/pulls?q=is%3Apr+author%3Aokhsunrog).
+*   **Apache Arrow, контрибьютор:** работаю над обработкой словарных массивов; исправил panic при переполнении словарных ключей в concat/interleave, включая вложенные типы. [Мои PR](https://github.com/apache/arrow-rs/pulls?q=is%3Apr+author%3Aokhsunrog).
+*   **Tarantool, контрибьютор открытого ядра:** исправил ошибку supervised failover, при которой повторно присоединённая реплика могла становиться вторым writable-узлом. [Принятый PR](https://github.com/tarantool/tarantool/pull/13000).
 *   Публикую библиотеки на crates.io, поддерживаю пакеты в AUR и пишу технические статьи. Другие проекты доступны на [GitHub](https://github.com/okhsunrog).
 
 ---
@@ -110,5 +112,5 @@ Rust-разработчик с <Duration start="2020-06" format="years-plus" /> 
 
 #### Образование и языки
 
-*   **Образование:** Среднее полное
+*   **Образование:** Неоконченное высшее
 *   **Языки:** Русский (родной), Английский (C1, продвинутый). Свободно читаю и пишу техническую документацию, участвую в обсуждениях и code review на английском.

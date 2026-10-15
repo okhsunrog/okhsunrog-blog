@@ -86,10 +86,12 @@ Worked through USETECH until April 2026, then joined VK Tech as an in-house deve
 
 #### Open Source Contributions
 
-*   **Apache Arrow:** fixed dictionary-key overflow panics in concat/interleave, including nested arrays. [Merged PR](https://github.com/apache/arrow-rs/pull/10675).
-*   **Embassy and esp-hal:** added an ESP32-C5 CAN FD driver with blocking/async APIs and hardware tests; redesigned the CORDIC API and fixed STM32 DMA hangs. Reduced CORDIC call time from 35 to 22 cycles in an STM32G474 benchmark. [CAN FD](https://github.com/esp-rs/esp-hal/pull/6280), [CORDIC](https://github.com/embassy-rs/embassy/pull/5663).
-*   **ergot:** developed routing, addressing, transport abstractions, and node liveness tracking. Fixed memory-safety issues with regression tests and Miri checks. [Merged PR](https://github.com/jamesmunns/ergot/pull/217).
-*   **Slint:** fixed framebuffer row-stride handling in Linux KMS and software renderer issues; added big-endian RGB565 support for SPI displays. [Linux KMS](https://github.com/slint-ui/slint/pull/13516), [RGB565](https://github.com/slint-ui/slint/pull/10882).
+*   **ergot maintainer:** develop the embedded networking stack, including transport architecture, routing, addressing, and connection recovery. Fix memory-safety and concurrency issues, with regression tests and Miri checks. [My PRs](https://github.com/jamesmunns/ergot/pulls?q=is%3Apr+author%3Aokhsunrog).
+*   **Embassy contributor:** develop STM32 peripheral support, including G0/G4 async flash, comparators, timer configuration, and CORDIC. Fixed DMA hangs and reduced CORDIC call time from 35 to 22 cycles in an STM32G474 benchmark. [My PRs](https://github.com/embassy-rs/embassy/pulls?q=is%3Apr+author%3Aokhsunrog).
+*   **esp-hal and esp-pacs contributor:** added an ESP32-C5 CAN FD driver with blocking/async APIs and hardware tests, fixed USB Serial data loss and clock configuration issues, and added peripheral register definitions. [esp-hal](https://github.com/esp-rs/esp-hal/pulls?q=is%3Apr+author%3Aokhsunrog), [esp-pacs](https://github.com/esp-rs/esp-pacs/pulls?q=is%3Apr+author%3Aokhsunrog).
+*   **Slint contributor:** develop the Linux KMS backend and fix software rendering and input handling. Added big-endian RGB565 support for SPI displays and aligned dirty-region support. [My PRs](https://github.com/slint-ui/slint/pulls?q=is%3Apr+author%3Aokhsunrog).
+*   **Apache Arrow contributor:** work on dictionary-array handling; fixed dictionary-key overflow panics in concat/interleave, including nested types. [My PRs](https://github.com/apache/arrow-rs/pulls?q=is%3Apr+author%3Aokhsunrog).
+*   **Tarantool open-source core contributor:** fixed a supervised failover bug that could make a rejoined replica become a second writable node. [Merged PR](https://github.com/tarantool/tarantool/pull/13000).
 *   Publish libraries on crates.io, maintain AUR packages, and write technical articles. More projects are available on [GitHub](https://github.com/okhsunrog).
 
 ---
@@ -111,5 +113,5 @@ Worked through USETECH until April 2026, then joined VK Tech as an in-house deve
 
 #### Education and Languages
 
-*   **Education:** High school
+*   **Education:** Incomplete higher education
 *   **Languages:** Russian (native), English (C1, advanced) — fluent in reading and writing technical documentation, participating in discussions, and code review in English
