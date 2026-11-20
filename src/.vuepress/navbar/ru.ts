@@ -6,7 +6,7 @@ export const ruNavbar = navbar([
   { text: "Резюме", icon: "file-lines", link: "/ru/cv/" },
   {
     text: "GitHub",
-    icon: "github",
+    icon: "fa6-brands:github",
     link: "https://github.com/okhsunrog/",
   },
-]); 
+]);

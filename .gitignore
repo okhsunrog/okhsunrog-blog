@@ -1,5 +1,9 @@
 
 node_modules/
+.vite/
+package-lock.json
+bun.lock
+bun.lockb
 src/.vuepress/.cache/
 src/.vuepress/.temp/
 src/.vuepress/dist/

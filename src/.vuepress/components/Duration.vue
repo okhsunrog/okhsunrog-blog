@@ -45,9 +45,11 @@ const MONTHS_RU = [
   "Декабрь",
 ];
 
-function parseYM(s: string): [number, number] {
-  const [y, m] = s.split("-").map(Number);
-  return [y, m];
+function parseYM(value: string): [number, number] {
+  if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(value)) {
+    throw new Error(`Duration expects YYYY-MM, received: ${value}`);
+  }
+  return [Number(value.slice(0, 4)), Number(value.slice(5))];
 }
 
 function pluralRu(
@@ -83,6 +85,9 @@ const result = computed(() => {
   const [sy, sm] = parseYM(props.start);
   const [ey, em] = parseYM(props.end ?? __BUILD_MONTH__);
   const totalMonths = (ey - sy) * 12 + (em - sm);
+  if (totalMonths < 0) {
+    throw new Error("Duration end must not precede its start");
+  }
 
   if (props.format === "years-plus") {
     return `${Math.floor(totalMonths / 12)}+`;
@@ -91,21 +96,22 @@ const result = computed(() => {
   if (props.format === "years-decimal") {
     const years = totalMonths / 12;
     const rounded = Math.floor(years * 2) / 2;
-    return rounded % 1 === 0 ? rounded.toFixed(0) : rounded.toFixed(1);
+    return rounded.toLocaleString(props.locale, { maximumFractionDigits: 1 });
   }
 
   if (props.format === "duration") {
-    return formatDuration(totalMonths, props.locale!);
+    return formatDuration(totalMonths, props.locale);
   }
 
   // period format
-  const startStr = `${MONTHS_EN[sm - 1] ? (props.locale === "ru" ? MONTHS_RU[sm - 1] : MONTHS_EN[sm - 1]) : sm} ${sy}`;
+  const monthNames = props.locale === "ru" ? MONTHS_RU : MONTHS_EN;
+  const startStr = `${monthNames[sm - 1]} ${sy}`;
   const endStr = props.end
-    ? `${props.locale === "ru" ? MONTHS_RU[em - 1] : MONTHS_EN[em - 1]} ${ey}`
+    ? `${monthNames[em - 1]} ${ey}`
     : props.locale === "ru"
       ? "настоящее время"
       : "Present";
-  const dur = formatDuration(totalMonths, props.locale!);
+  const dur = formatDuration(totalMonths, props.locale);
   return `${startStr} — ${endStr} (${dur})`;
 });
 </script>

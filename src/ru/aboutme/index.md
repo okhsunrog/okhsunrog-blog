@@ -3,6 +3,7 @@ home: true
 portfolio: true
 icon: circle-info
 title: Обо мне
+welcome: 👋 Привет, я
 bgImage: /images/hero-bg.webp
 titles:
   - Инженер встраиваемых систем
@@ -22,4 +23,4 @@ titles:
 
 - 📧 Email: [me@okhsunrog.dev](mailto:me@okhsunrog.dev)
 - ✈️ Telegram: [@okhsunrog](https://t.me/okhsunrog)
-- 🐙 GitHub: [@okhsunrog](https://github.com/okhsunrog) 
+- 🐙 GitHub: [@okhsunrog](https://github.com/okhsunrog)

@@ -18,7 +18,7 @@ export default hopeTheme({
     url: "https://okhsunrog.dev",
   },
 
-  logo: "iconify:fa6-solid:gears",
+  logo: "/images/logo.svg",
 
   repo: "okhsunrog/okhsunrog-blog",
 
@@ -84,12 +84,19 @@ export default hopeTheme({
   },
 
   plugins: {
+    // With vue-router's new scroll restoration, the plugin's hash updates
+    // trigger scrolling to the previous heading, so the page drifts upward.
+    activeHeaderLinks: false,
     blog: true,
+    redirect: {
+      switchLocale: false,
+    },
     components: {
       components: ["Badge", "VPCard"],
     },
     icon: {
       prefix: "fa6-solid:",
+      offline: true,
     },
   },
 });

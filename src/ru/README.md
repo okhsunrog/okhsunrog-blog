@@ -1,13 +1,13 @@
 ---
 home: true
 layout: Blog
-icon: home
+icon: house
 title: Okhsunrog's Blog
 heroFullScreen: false
 bgImage: /images/electronics_bg.webp
 tagline: Личный блог о программировании, Linux и электронике
 projects:
-  - icon: github
+  - icon: fa6-brands:github
     name: GitHub
     desc: Ознакомьтесь с моим вкладом в проекты с открытым исходным кодом.
     link: https://github.com/okhsunrog

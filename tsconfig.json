@@ -2,13 +2,19 @@
   "compilerOptions": {
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "target": "ES2022"
+    "target": "ES2022",
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["node"]
   },
   "include": [
     "src/.vuepress/**/*.ts",
     "src/.vuepress/**/*.vue"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/.vuepress/.cache",
+    "src/.vuepress/.temp",
+    "src/.vuepress/dist"
   ]
 }

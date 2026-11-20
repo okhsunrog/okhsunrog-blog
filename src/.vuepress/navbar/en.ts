@@ -6,7 +6,7 @@ export const enNavbar = navbar([
   { text: "CV", icon: "file-lines", link: "/cv/" },
   {
     text: "GitHub",
-    icon: "github",
+    icon: "fa6-brands:github",
     link: "https://github.com/okhsunrog/",
   },
 ]);
