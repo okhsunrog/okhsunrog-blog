@@ -130,12 +130,13 @@ A local-first knowledge base in Rust/Tauri/React with desktop and Android client
 
 ##### [vpnhide](https://github.com/okhsunrog/vpnhide) ![](https://img.shields.io/github/stars/okhsunrog/vpnhide?style=social)
 
-Tools for hiding an active VPN from selected Android apps: LSPosed, Linux kernel modules, and native Rust/C hooks.
+Hides an active VPN from selected Android apps, including banking apps with code-injection protection that defeats existing alternatives. **About 69k release downloads, 42 forks, 27 releases.**
 
 ::: details Details
-*   Implemented framework API filtering in system_server through LSPosed, Linux kernel modules using kprobe/kretprobe, and native Rust/C hooks through Zygisk.
-*   Connected a Kotlin/Jetpack Compose app to Rust components through JNI, implemented diagnostics and report export, and added native logic tests and QEMU scenarios for kernel modules.
-*   In the ongoing 2.0 rewrite, implemented communication between the Kotlin app and a privileged Rust daemon through UniFFI and tarpc over Unix sockets, UID authorization, and operation recovery after restart.
+*   Alternatives install Xposed hooks inside the target app, which anti-tamper protection detects. vpnhide injects nothing into the app: Java APIs are filtered at the Binder level in system_server (LSPosed), and native paths in the kernel through kprobe/kretprobe.
+*   Covered native detection paths that Java hooks miss: ioctl, getifaddrs, netlink interface and route dumps, /proc/net, and binding sockets to an interface. Kernel backends: a module for GKI kernels, KPM for older 4.9–5.4 kernels, a built-in kernel driver, and Zygisk as a fallback. A Rust daemon picks the right backend for the device.
+*   Added hiding of local VPN/proxy client ports through iptables and hiding installed apps from PackageManager checks.
+*   The Kotlin/Jetpack Compose app shows status, per-app interception statistics, and 25 diagnostic hiding checks. Kernel modules are tested in QEMU. I run releases and triage issues; the README is available in Russian, English, and Chinese.
 :::
 
 ##### [Archinstall-ZFS](https://github.com/okhsunrog/archinstall_zfs) ![](https://img.shields.io/github/stars/okhsunrog/archinstall_zfs?style=social)
