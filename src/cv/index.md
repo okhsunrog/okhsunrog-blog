@@ -6,207 +6,87 @@ pageInfo: false
 ---
 
 ### Danila Gornushko
-Backend / Embedded Software Engineer
+Rust engineer · databases, systems software and embedded development
 
-#### Contacts
-*   Telegram: [t.me/okhsunrog](https://t.me/okhsunrog) (preferred contact method)
-*   Email: me@okhsunrog.dev
-*   Personal website: [okhsunrog.dev](https://okhsunrog.dev)
-*   GitHub: [github.com/okhsunrog](https://github.com/okhsunrog)
-*   LinkedIn: https://www.linkedin.com/in/danila-gornushko-130152379/
-*   Habr: https://habr.com/ru/users/okhsunrog/
-*   Location: Moscow
-*   Citizenship: Russia
+Moscow · [Telegram (preferred)](https://t.me/okhsunrog) · [me@okhsunrog.dev](mailto:me@okhsunrog.dev) · [GitHub](https://github.com/okhsunrog)
 
 #### Summary
 
-Backend and embedded engineer with <Duration start="2020-06" format="years-plus" /> years of software engineering experience and <Duration start="2023-03" format="years-decimal" /> years of Rust development. I build server applications and LLM infrastructure: my LLM proxy with spending limits and request-cost accounting has been running in production since February 2026. I deploy and operate my own services. At VK Tech, I contributed to Tarantool Column Store, a distributed columnar database. I also work on systems software, embedded systems, and applications for Linux and Android. My contributions have been merged into Apache Arrow, Embassy, esp-hal, ergot, Slint, and Tarantool. Currently learning Go.
+I’ve worked in Rust since 2023. At VK Tech I develop Tarantool Column Store, a distributed columnar database. I previously wrote firmware and hardware tools for STM32 and ESP32 devices. I maintain the ergot embedded networking stack and contribute to Embassy.
 
 #### Work Experience
 
 ##### Rust Developer / Senior Backend Developer | Tarantool Column Store, VK Tech, Moscow
 <Duration start="2025-08" locale="en" />
 
-Worked through USETECH until April 2026, then joined VK Tech as an in-house developer in May 2026.
+I joined the product team through USETECH in August 2025 and moved in-house to VK Tech in May 2026. The project uses Rust, C, DataFusion, Apache Arrow, etcd and Arrow Flight SQL.
 
-A distributed columnar database on top of Tarantool (Rust, DataFusion, Apache Arrow, etcd, gRPC/Arrow Flight SQL, C).
-
-*   Improved cluster fault tolerance during node and coordination-service failures. Fixed a Tarantool core bug that let a rejoined replica become a second writable node ([PR](https://github.com/tarantool/tarantool/pull/13000)).
-*   Diagnosed and fixed resource leaks, network latency issues, and service startup problems. Backed each fix with a reproducible scenario and regression tests.
-*   Implemented end-to-end column compression and dictionary encoding, from SQL down to the storage engine.
-*   Improved observability (streaming HTTP logging, metrics) and sped up GitLab CI.
+*   Implemented SQL options for per-column compression and dictionary encoding of strings. Extended the write and read paths, including queries spanning multiple shards. Both features shipped in TCS 1.3.0. [Release notes](https://tarantool.io/docs/tcs/ru/1_x/rn)
+*   Fixed a Tarantool core bug that allowed a recovered replica and the leader to accept writes at the same time. [Merged change](https://github.com/tarantool/tarantool/pull/13000)
+*   Fixed query routing after a lost connection to etcd. On reconnect, the scheduler rebuilds its view of which nodes can serve reads and writes.
+*   Fixed memory retention in long-lived Arrow Flight SQL sessions. A query now holds its data snapshot only for the duration of that query, preserving consistent reads.
 
 ##### Rust/C Programmer | Minimax-94, Moscow
 <Duration start="2024-03" end="2025-07" locale="en" />
 
-*   Developed and debugged firmware for STM32 microcontrollers in C and Rust.
-*   Created test utilities and scripts for data analysis in Python.
-*   Designed console and GUI applications (native-windows-gui, GTK4, Tauri) in Rust for interacting with hardware.
+*   Rewrote an internal device flashing tool from C to Rust and built its graphical interface. The tool communicates with the hardware over a proprietary protocol.
+*   Developed and debugged STM32 firmware in C and Rust. Wrote Python tools for testing hardware and analysing measurements.
 
 ##### Rust/Embedded Developer | Korotkov (Sole Proprietorship), Moscow
 <Duration start="2023-03" end="2024-02" locale="en" />
 
-*   Developed electronic modules for escape rooms from scratch, including circuit design, PCB layout (EasyEDA), assembly, and programming (AVR, ESP32 in C/C++ and Rust).
-*   Implemented a distributed system of devices with network communication over CAN bus and a custom protocol.
-*   Wrote a small supporting HTTP service in Rust (Axum) for device control and status monitoring. Studied the company's Go backend while integrating devices and made small changes to it.
-*   Introduced an OTA firmware update system over CAN bus using Raspberry Pi.
+*   Designed a CAN protocol for escape room devices and implemented debugging and firmware updates over the same bus from a Raspberry Pi.
+*   Designed schematics and PCBs in EasyEDA, assembled the boards and wrote firmware for AVR and ESP32.
+*   Built an HTTP service in Rust and Axum to control devices and monitor their status.
 
 ##### Junior DevOps | Rostelecom Information Technologies, Moscow
 <Duration start="2021-11" end="2023-02" locale="en" />
 
-*   Developed a web service for server monitoring (Ruby, Sinatra, Bootstrap).
-*   Participated in service migrations and implemented containerization (Docker, docker-compose).
-*   Set up CI/CD pipelines and deployment automation.
+*   Migrated a service from Debian 6 to Debian 9.
+*   Set up builds and automated test runs in GitLab CI.
+*   Added features to the web interface of a server monitoring service built with Ruby, Sinatra and Bootstrap.
 
 ##### Programmer, System Administrator | Freelance, Moscow
 <Duration start="2020-06" end="2021-09" locale="en" />
 
-*   Administered Linux servers, deployed web services, developed projects on Arduino and Python, and native Android applications (Kotlin) for controlling devices via BLE.
+*   Administered Linux servers and deployed web services. Built Arduino devices, wrote Python tools and developed Android apps in Kotlin to control hardware over Bluetooth LE.
 
 #### Selected Projects
 
-**Backend, LLMs, and infrastructure**
+##### [vpnhide](https://github.com/okhsunrog/vpnhide)
 
-##### [claude-proxy-rs](https://github.com/okhsunrog/claude-proxy-rs) and [llm-relay](https://github.com/okhsunrog/llm-relay)
-
-LLM proxy in Rust/Axum/PostgreSQL with OpenAI and Anthropic APIs, client keys, spending limits, and request-cost accounting. **Running in production since February 2026: about 100k requests and 12B tokens across 20+ client keys.**
-
-::: details Details
-*   Implemented OAuth access to providers, client keys with model access controls, spending limits, token and request-cost accounting, an admin UI, and a user-facing usage dashboard.
-*   Implemented SSE and tool-call conversion, usage accounting on request cancellation, Retry-After-aware retries, and OAuth token refresh. Added integration checks using real SDKs and PostgreSQL.
-*   Deployed with Ansible: a static musl binary under systemd with a dedicated user and memory limit, PostgreSQL, and access only through a WireGuard tunnel and nginx. Migrated the service to another server using a consistent dump, data verification before cutover, and a rollback plan.
-*   Maintain llm-relay, a shared library used across several of my projects. It provides LLM protocol types and conversion, HTTP clients, streaming events, embeddings, and Rig adapters.
-:::
-
-##### [realty-aggregator](https://github.com/okhsunrog/realty-aggregator)
-
-A Rust/Axum/PostgreSQL/S3 service that regularly collects listings and runs batch LLM analysis of their text and photos, with bounded concurrency, retries, and recovery after failures.
-
-::: details Details
-*   Implemented incremental collection from an external API: pagination, overlapping time windows, and a checkpoint that advances only after every page is saved. Listings and photos are saved transactionally, and stale data cannot overwrite newer data.
-*   Photos are stored in S3-compatible storage (MinIO, later RustFS). Implemented two-tier LLM vision analysis in JSON mode: validation of response completeness and score ranges, bounded retries with delays, rate limiting, and configurable concurrency. Import, image download, and analysis resume independently.
-*   Scheduled background jobs skip missed ticks instead of building a backlog. Job status is streamed over WebSocket. SQL queries are checked at compile time (SQLx), and integration tests run against separate PostgreSQL databases in CI.
-:::
-
-##### [Floppa VPN](https://github.com/okhsunrog/floppa-vpn)
-
-A VPN service with an Axum/PostgreSQL backend, Telegram bot, subscription payments, and a Tauri 2 client for Linux, Windows, and Android. **In production since 2026, with hundreds of users, including paying customers.**
-
-::: details Details
-*   Implemented JWT authentication, subscriptions and payments, transactional device-management operations, and an admin panel.
-*   Built a shared asynchronous connection-management core with typed IPC/RPC, protocol selection, cancellation, and reconnection. Implemented a network-change journal to restore routes and DNS after a process crash.
-*   Integrated WireGuard, AmneziaWG, and VLESS+REALITY, VictoriaMetrics monitoring, and component synchronization through PostgreSQL LISTEN/NOTIFY. The service runs on several VPS in different regions, with separate staging and production configurations.
-:::
-
-##### Personal infrastructure
-
-Manage infrastructure of several VPS and a home server as code: Ansible, NixOS, WireGuard, PostgreSQL, and monitoring.
-
-::: details Details
-*   Wrote Ansible roles for VPN nodes, reverse proxies (nginx, HAProxy), PostgreSQL, VictoriaMetrics, Forgejo with CI runners, a TURN server, and my own applications. Secrets are kept in Ansible Vault, and regions are connected through WireGuard tunnels.
-*   Migrate services between servers using documented procedures: consistent dumps, data verification, pre-publication checks, and a rollback plan.
-*   Maintain declarative NixOS configurations for my work laptop and a Raspberry Pi, with SOPS-managed secrets and VM tests. Remotely migrated a device from Debian to NixOS while preserving its data.
-:::
+An Android tool that hides active VPN connections from selected apps. I wrote the Linux kernel modules in C and the userspace daemon in Rust. I maintain support for multiple kernel versions and test the modules in QEMU. As of November 2026, the project has over 700 GitHub stars and roughly 70,000 release asset downloads.
 
 ##### [Arctern](https://github.com/okhsunrog/arctern)
 
-An asynchronous ZFS replication daemon in Rust with multiplexed SSH transport, tarpc RPC, and a Vue/TypeScript web console.
+A ZFS replication daemon written in Rust. It transfers incremental snapshots over SSH and resumes interrupted transfers. I implemented bandwidth limits and access controls, with a Vue and TypeScript console for monitoring replication.
 
-::: details Details
-*   Implemented incremental and resumable transfers, reconnection with backoff, bandwidth limiting, and ACLs.
-*   Added Unix-socket authorization based on peer process credentials, SSE event replay, and ZFS/SSH integration scenarios.
-:::
+##### [zbm-rs](https://github.com/okhsunrog/zbm-rs)
 
-##### [Tangleaf](https://github.com/okhsunrog/tangleaf)
+A Linux boot manager for ZFS written in Rust. I implemented NixOS generation selection, boot from a writable snapshot clone, and verification of the kernel, initramfs and arguments before kexec. On a Framework Laptop 13 I tested Secure Boot and experimental hibernation with TPM-authenticated memory image restoration. [Verification results](https://github.com/okhsunrog/zbm-rs/blob/main/docs/verification.md)
 
-A local-first knowledge base in Rust/Tauri/React with desktop and Android clients, synchronization, and a server with search and an agent.
+##### [claude-proxy-rs](https://github.com/okhsunrog/claude-proxy-rs) and [llm-relay](https://github.com/okhsunrog/llm-relay)
 
-::: details Details
-*   Implemented SQLite storage, FTS5 search, and HTTP/WebSocket synchronization with an operation log, an offline outbox, and HLC/LWW conflict resolution.
-*   Implemented document indexing, embeddings, hybrid retrieval with reranking, entity extraction, and streaming agent chat on an Axum server. Added authenticated MCP access to notes with revision checks on writes.
-:::
+An LLM proxy built with Rust, Axum and PostgreSQL, and a library for working with provider APIs. I’ve deployed and operated the service since February 2026. By November it had handled about 100,000 requests across more than 20 client keys. I implemented spending limits and usage accounting, including when a client cancels a streaming response.
 
-**Systems software, Android, and embedded**
+##### [OxiFOC](https://github.com/okhsunrog/oxifoc)
 
-##### [vpnhide](https://github.com/okhsunrog/vpnhide) ![](https://img.shields.io/github/stars/okhsunrog/vpnhide?style=social)
-
-Hides an active VPN from selected Android apps, including banking apps with code-injection protection that defeats existing alternatives. **About 69k release downloads, 42 forks, 27 releases.**
-
-::: details Details
-*   Alternatives install Xposed hooks inside the target app, which anti-tamper protection detects. vpnhide injects nothing into the app: Java APIs are filtered at the Binder level in system_server (LSPosed), and native paths in the kernel through kprobe/kretprobe.
-*   Covered native detection paths that Java hooks miss: ioctl, getifaddrs, netlink interface and route dumps, /proc/net, and binding sockets to an interface. Kernel backends: a module for GKI kernels, KPM for older 4.9–5.4 kernels, a built-in kernel driver, and Zygisk as a fallback. A Rust daemon picks the right backend for the device.
-*   Added hiding of local VPN/proxy client ports through iptables and hiding installed apps from PackageManager checks.
-*   The Kotlin/Jetpack Compose app shows status, per-app interception statistics, and 25 diagnostic hiding checks. Kernel modules are tested in QEMU. I run releases and triage issues; the README is available in Russian, English, and Chinese.
-:::
-
-##### [Archinstall-ZFS](https://github.com/okhsunrog/archinstall_zfs) ![](https://img.shields.io/github/stars/okhsunrog/archinstall_zfs?style=social)
-
-An Arch Linux installer in Rust with ZFS, encryption, ZFSBootMenu, a Slint/LinuxKMS GUI, and a ratatui TUI.
-
-::: details Details
-*   Implemented libalpm package management, parallel resumable downloads with mirror failover and checksum verification, and installation cancellation with resource cleanup.
-*   Added QEMU scenarios for installation and boot verification.
-:::
-
-##### [OxiFOC](https://github.com/okhsunrog/oxifoc) ![](https://img.shields.io/github/stars/okhsunrog/oxifoc?style=social)
-
-Brushless motor-control firmware in Rust/Embassy with a hardware-independent no_std FOC core for STM32. The basis of my RustCon 2026 talk.
-
-::: details Details
-*   Separated the ADC ISR control loop from asynchronous command and telemetry handling through a lock-free queue.
-*   Built a BASEPRI-based priority-ceiling mutex for Cortex-M to synchronize the networking stack while preserving high-priority motor-control interrupts. Use hardware profiling and a virtual motor sharing the firmware's control and protection code.
-:::
-
-##### POWER-Z KM003C: protocol reverse engineering and [km003c-rs](https://github.com/okhsunrog/km003c-rs) ![](https://img.shields.io/github/stars/okhsunrog/km003c-rs?style=social)
-
-Reverse-engineered the analyzer's undocumented USB protocol and built a Rust library on top of it, with a CLI, GUIs, Python bindings, and a browser client.
-
-::: details Details
-*   Correlated USB captures with official software exports, analyzed Mtools.exe in Ghidra, and examined decrypted device firmware. Reconstructed command and data formats, AES authentication, and encrypted log retrieval. Validated implemented workflows on hardware. [Research materials](https://github.com/okhsunrog/km003c-protocol-research).
-*   Built USB transaction analysis tools in Python/Polars and a Rust pcapng-to-Parquet converter. Documented the protocol, distinguishing capture-backed and hardware-validated findings from static analysis conclusions.
-*   Built a typed async Rust library with nusb communication, measurement acquisition, and USB Power Delivery parsing, plus a CLI, egui GUI, and experimental Slint interface for desktop and Android. Published the library on crates.io and Python bindings through PyO3, with CI-built wheels.
-*   Added a browser client using WebAssembly and a shared wgpu renderer with compute processing of measurements. Implemented CSV/Parquet recording with a journal for crash recovery.
-:::
-
-##### [Foilfern](https://github.com/okhsunrog/foilfern)
-
-An electronics design system in Rust with a Slint editor, CLI, and MCP server for agent-driven project editing.
-
-::: details Details
-*   Implemented schematic and PCB editing, ERC/DRC, autorouting, 3D previews, and manufacturing exports.
-*   Designed MCP tools for agent-driven project editing over stdio and Streamable HTTP. Implemented change previews, revision checks, atomic operations, and undo/redo. Check file compatibility and validation results against LibrePCB.
-:::
-
-##### MCP tools
-
-MCP servers that let AI agents work with microcontrollers, hardware documentation, and the KDE desktop.
-
-::: details Details
-*   Built [Flashprobe MCP](https://github.com/okhsunrog/flashprobe-mcp) for flashing and monitoring microcontrollers through probe-rs/espflash, and [STM32 Data MCP](https://github.com/okhsunrog/stm32-data-mcp) for querying pin mappings, registers, and peripheral data.
-*   Maintain a [KWin MCP fork](https://github.com/okhsunrog/kwin-mcp) for KDE/Wayland automation through AT-SPI2 and libei. Fix input handling, isolated-session management, and error reporting.
-:::
-
-#### Speaking
-
-*   **RustCon 2026, Moscow, December 4, 2026 (upcoming).** [“50 Microseconds for Everything: Async Rust and Field-Oriented Motor Control”](https://rustcon.ru/50-mikrosekund-na-vsyo-async-rust-i-vektornoe-upravlenie-motorom). The talk is in Russian and covers OxiFOC, separating time-critical interrupts from Embassy tasks, hardware-independent architecture, and virtual-motor testing.
+Brushless motor control firmware for STM32. The control loop runs in an interrupt while Embassy tasks handle commands and telemetry. The hardware and virtual motor share the same control and protection code. The 50-microsecond control budget is the subject of my [RustCon talk (in Russian)](https://rustcon.ru/50-mikrosekund-na-vsyo-async-rust-i-vektornoe-upravlenie-motorom) scheduled for 4 December 2026.
 
 #### Open Source Contributions
 
 *   **ergot maintainer:** embedded networking stack — transports, routing, connection recovery, and memory-safety and concurrency fixes with Miri checks. [My PRs](https://github.com/jamesmunns/ergot/pulls?q=is%3Apr+author%3Aokhsunrog).
-*   **Embassy contributor:** STM32 peripheral support, DMA hang fixes, CORDIC call time reduced from 35 to 22 cycles. [My PRs](https://github.com/embassy-rs/embassy/pulls?q=is%3Apr+author%3Aokhsunrog).
+*   **Embassy contributor:** STM32 peripheral support, DMA hang fixes, CORDIC call time reduced from 35 to 22 cycles on STM32G474. [My PRs](https://github.com/embassy-rs/embassy/pulls?q=is%3Apr+author%3Aokhsunrog).
 *   **esp-hal and esp-pacs contributor:** ESP32-C5 CAN FD driver with hardware tests, USB Serial and clock configuration fixes. [esp-hal](https://github.com/esp-rs/esp-hal/pulls?q=is%3Apr+author%3Aokhsunrog), [esp-pacs](https://github.com/esp-rs/esp-pacs/pulls?q=is%3Apr+author%3Aokhsunrog).
 *   **Slint contributor:** Linux KMS backend, software renderer, input handling. [My PRs](https://github.com/slint-ui/slint/pulls?q=is%3Apr+author%3Aokhsunrog).
 *   **Apache Arrow contributor:** fixed dictionary-key overflow panics in concat/interleave, including nested types. [My PRs](https://github.com/apache/arrow-rs/pulls?q=is%3Apr+author%3Aokhsunrog).
 *   **Tarantool contributor:** supervised failover fix. [Merged PR](https://github.com/tarantool/tarantool/pull/13000).
 
-::: details More about contributions
-*   **ergot:** develop transport architecture, routing, addressing, and connection recovery. Fix memory-safety and concurrency issues, with regression tests and Miri checks.
-*   **Embassy:** G0/G4 async flash, comparators, timer configuration, and CORDIC. Fixed DMA hangs and reduced CORDIC call time from 35 to 22 cycles in an STM32G474 benchmark.
-*   **esp-hal and esp-pacs:** added an ESP32-C5 CAN FD driver with blocking/async APIs and hardware tests, fixed USB Serial data loss and clock configuration issues, and added peripheral register definitions.
-*   **Slint:** develop the Linux KMS backend and fix software rendering and input handling. Added big-endian RGB565 support for SPI displays and support for dirty-region alignment.
-*   **Apache Arrow:** work on dictionary-array handling.
-*   **Tarantool:** fixed a bug that could make a rejoined replica become a second writable node.
-*   Publish libraries on crates.io, maintain AUR packages, and write technical articles. More projects are available on [GitHub](https://github.com/okhsunrog).
+::: details Other projects
+*   [km003c-rs](https://github.com/okhsunrog/km003c-rs) — I reverse-engineered the POWER-Z KM003C meter’s USB protocol and published a Rust library, CLI and Python bindings.
+*   [Archinstall-ZFS](https://github.com/okhsunrog/archinstall_zfs) — an Arch Linux installer for encrypted ZFS systems, with boot tests in QEMU.
+*   [Tangleaf](https://github.com/okhsunrog/tangleaf) — a local-first knowledge base with desktop and Android sync.
+*   [realty-aggregator](https://github.com/okhsunrog/realty-aggregator) — batch processing for property listings and photos using PostgreSQL and S3, with resumable jobs.
 :::
 
 #### Technical Skills
