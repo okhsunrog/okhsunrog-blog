@@ -107,7 +107,6 @@ Brushless motor control firmware for STM32. The control loop runs in an interrup
 *   **Hardware** - circuit design, PCB layout, SMD/QFN assembly, logic analyzers, and oscilloscopes.
 :::
 
-#### Education and Languages
+#### Languages
 
-*   **Education:** Incomplete higher education
-*   **Languages:** Russian (native), English (C1, advanced) — fluent in reading and writing technical documentation, participating in discussions, and code review in English
+Russian (native), English (C1, advanced) — fluent in reading and writing technical documentation, participating in discussions, and code review in English
